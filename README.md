@@ -1,16 +1,17 @@
-# Cohesity Infrastructure Deployment with Cisco X-Series Intel based All Flash nodes supporting both Cisco VIC 4th Gen and 5th Gen VIC
+# Cohesity Server Profile Template Deployment with Cisco C240 M5/M6 LFF Intel based Servers supporting both Cisco VIC 4th Gen  VIC
 
-This repository  contains Ansible playbooks to configure the Cohesity on Cisco X-Series Infrastructure which includes : <br />
-&emsp;&emsp; •	 Cisco UCS in Intersight Managed Mode (IMM) <br />
+This repository  contains Ansible playbooks to configure the Cohesity Server Profiles on Cisco C240 M5/M6 LFF Intel based Servers which includes : <br />
+&emsp;&emsp; •	 Cisco UCS C240 M5/M6 standalone servers  managed throuhgh Intersight  <br />
 
 
-This repository can be used to automate the configuration Cohesity Infrastructure on Intel X210C All NVME nodes configured in Cisco X-Series Modular System  .
+This repository can be used to automate the creation of Server Profile Template for C240 M5/M6 LFF Server. This Template is specific to Cohesity deployment with C240 directly connected to an uplink switch (eg Nexus 93180xx).
 
-Details will be covered in the upcoming Cisco Validated Design document.
+Manual deployment of Server Profile Template is detailed under https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-computing/ucs-c-series-rack-servers/deploy-cohesity-on-intersight-standalone.pdf
 
-The CVD lays out the complete process for configuring the Cohesity Infrastructure on Cisco X-Series All NVMe nodes using Ansible. Since these playbooks are intended to save time in setting up a working Cohesity environment, a complete deployment architecture for Cohesity on Cisco X-Series is shown below is needed to execute the playbooks.
 
-## Cohesity on X-Series - Physical Topologies
+
+
+## Cohesity on C240 M5/M6 (standalone , managed through Intersight) - Physical Topologies
 
 IP connectivity             |  FC connectivity
 :-------------------------:|:-------------------------:
@@ -20,7 +21,7 @@ IP connectivity             |  FC connectivity
 
 ## How to execute these playbooks?
 
-### High-Level Cohesity on X-Series Automation
+### High-Level Cohesity on C240 M5/M6 Automation
 <img width="1200" alt="Screen Shot 2022-09-15 at 5 03 58 PM" src="https://user-images.githubusercontent.com/25094641/190393678-6cafd996-fae2-4553-8f23-12cbe1c11293.png">
 
 <br />
@@ -50,13 +51,13 @@ You might already have this collection installed.
 
 The Intersight playbooks in this repository perform following functions:
 
-1. Create various pools required to setup a Server Profile Template
-2. Create various policies required to setup a Server Profile Template
-3. Create Server Profile Templates
 
-After successfully executing the playbooks, one or many server profiles can easily derived and attached to the All NVMe node from Intersight dashboard.
+1. Create various policies required to setup a Server Profile Template
+2. Create Server Profile Templates
 
-**NOTE:** The addition of UCS to Intersight Account or configuration of Domain Profile to setup UCS is not part of this repository and will have to be performed manually before executing the playbooks.
+After successfully executing the playbooks, one or many server profiles can easily derived and attached to the C240 M5/M6 nodes from Intersight dashboard.
+
+
 
 **NOTE:** The playbooks do not create an organization and assume an organization (default or otherwise) has already been setup under Intersight account. The organization name must be updated in group_vars/all.yml(org_name) for successful execuation of the playbooks.
 
@@ -84,15 +85,15 @@ All the variables used in this framework are defined in the following locations:
 
 ### Playbook Execution Commands
 
-1.	Setup Pools in Intersight: `ansible-playbook ./create_pools.yml -i inventory`
-2.	Setup Policies in Intersight: `ansible-playbook ./create_server_policies.yml -i inventory`
-3.	Setup Server Profile Template(s) in Intersight: `ansible-playbook ./create_server_profile_template.yml -i inventory`
+
+1.	Setup Policies in Intersight: `ansible-playbook ./create_server_policies.yml -i inventory`
+2.	Setup Server Profile Template(s) in Intersight: `ansible-playbook ./create_server_profile_template.yml -i inventory`
 
 <br />
 
 
 ### Post Configuration Tasks
 
-Execution of first three playbooks in these repositories set up Server Profile Template in Intersight. After successfully executing the playbooks, one or more server profiles can easily derived and attached to the compute node from Intersight dashboard. KVM mounted DVD option or Intersight OS Install feature is available to install Cohesity OS to these newly derived servers.
+Execution of first two playbooks in these repositories set up Server Profile Template in Intersight. After successfully executing the playbooks, one or more server profiles can easily derived and attached to the compute node from Intersight dashboard. KVM mounted DVD option or Intersight OS Install feature is available to install Cohesity OS to these newly derived servers.
 
 <br />
