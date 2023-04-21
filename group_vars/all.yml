@@ -1,0 +1,74 @@
+# This file defines the variables which are common across the entire setup.
+
+
+# Enter Intersight API Key ID and the location of the SecretKey file
+api_key_id        : 5d1cf7a87564612d30f05a40/5d1cf7127564612d30f04de5/6385077b7564612d317e2561
+api_private_key   : ~/Downloads/ansible/SecretKey.txt
+
+
+
+# Intersight Organization Name. Please make sure it already exists. Use 'default' if no orgaization is created
+org_name      : "default"
+
+
+
+# Prefix added to the pool/policy/profile configuration to eaisly identify items created by Ansible
+prefix        : 5-rack
+
+
+###############################################################################
+#
+# Server Configuration
+#
+##############################################################################
+
+# Server CPU Type - set to Intel or AMD
+server_cpu_type: "Intel"
+
+# VIC Type - set to 4G for 4th Gen VICs or 5G for 5th Gen VICs - Also add 4G (VIC 14xx) or 5G (VIC 15xx) to Server Profile Template Name
+vic_type: "4G"
+
+# UCS VIC Slot ID - Slot ID of the device. Supported values are ( 1 - 255, "MLOM", "L1", "L2" ) - Also add an indicator of this to FC and iSCSI LAN Connectivity Policy Names
+vic_slot_id: "MLOM"
+
+
+
+###############################################################################
+#
+# Server Policies
+#
+###############################################################################
+# BIOS policies
+name_of_bios_policy        : "{{ prefix }}-{{ server_cpu_type }}-M5-BIOS"
+#
+
+# IPMI over LAN Policy
+name_of_ipmi_policy                 : "{{ prefix }}-Enable-IPMIoLAN-Policy"
+
+# Ethernet VIC Adapter Policy (4g/5g)
+# Various values can be updated under roles/create_server_policies/defaults/main.yml
+name_of_ethernet_adapter_policy  : "{{ prefix }}-EthAdapter-{{ vic_type }}"
+
+
+#------------------------- BOOT Order Policy ------------------------------
+# Boot Order Policy
+boot_order_policy_name         : "{{ prefix }}-Boot-Order-Policy"
+
+
+#------------------------- Serial Over LAN Policy ------------------------------
+name_of_sol_policy           : "{{ prefix }}-SOL-Policy"
+
+#------------------------- Storage Policy------------------------------
+name_of_storage_policy           : "{{ prefix }}-Storage-Policy"
+
+#------------------------- Standalone C-Series Adapter Policy------------------------------
+name_of_adapter_policy           : "{{ prefix }}-Adapter-Policy"
+
+# Boot mode for server. Either put Uefi or Legacy
+# UEFI secure boot true or false
+boot_mode                   : "Uefi"
+enable_uefi_secureboot      : 'false'
+
+#------------------------- Server Profile Template Name  ----------------------------------
+
+name_of_SPT       : "{{ prefix }}-{{ server_cpu_type }}-{{ vic_type }}-Cohesity-Template"

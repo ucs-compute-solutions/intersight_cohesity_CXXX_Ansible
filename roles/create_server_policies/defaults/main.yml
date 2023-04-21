@@ -1,0 +1,55 @@
+# This file defines various default values used by server policies
+# These values typically do not need to changes but can be modified depending on customer deployments
+
+# BIOS policies
+description_of_bios_policy : "BIOS Policy for Performance Optimized {{ server_cpu_type }}-based M5/M6  Servers"
+
+#
+# Boot Order Policy (if required)
+boot_order_policy_description    : "Boot Order Policy - M.2 MSTOR-RAID"
+
+# Storage Policy  (if required)
+description_of_storage_policy    : "Storage Policy - JBOD"
+
+# C-Series standalone Adapter Policy
+# FecMode cl91, cl74 or Off
+description_of_adapter_policy     : "Adapter Policy Description"
+SlotId                            : "MLOM"
+FecMode                           : "cl91"
+EnablePortChannel                 :  'false'
+
+
+
+# IPMI over LAN Policy
+# Encryption Key should be even hexadecimal digits with length less than 40
+description_of_ipmi_policy          : "Enable IPMI over LAN"
+EncryptionKey                       : "00000000"
+
+
+# Serial Over Lan Policy
+description_of_sol_policy      : "Serial Over LAN Policy Description"
+BaudRate                       : 115200
+ComPort                        : "com0"
+SshPort                        : 2400
+
+
+
+# Ethernet Adapter Policy  - 4th Gen VIC (Applies to Cohesity)
+description_of_ethernet_adapter_4g_policy  : "Ethernet Adapter Policy  - 4th Gen VIC"
+vm4g_number_of_interrupts    : 10
+vm4g_receive_queue_count     : 8
+vm4g_receive_ring_size       : 4096
+vm4g_transmit_queue_count    : 4
+vm4g_transmit_ring_size      : 4096
+vm4g_completion_queue_count  : 12
+vm4g_completion_ring_size    : 1
+
+# Ethernet Adapter Policy for VMware 16 Rx Queues - 5th Gen VIC (Applies to iSCSI Boot/NVMe-TCP Interface)
+description_of_ethernet_adapter_5g_policy  : "Ethernet Adapter Policy  - 5th Gen VIC"
+vm5g_number_of_interrupts    : 19
+vm5g_receive_queue_count     : 16
+vm5g_receive_ring_size       : 16384
+vm5g_transmit_queue_count    : 1
+vm5g_transmit_ring_size      : 16384
+vm5g_completion_queue_count  : 17
+vm5g_completion_ring_size    : 1
