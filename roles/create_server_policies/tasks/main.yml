@@ -26,6 +26,24 @@
 
 
 
+# Create Cohesity Boot Order Policy
+- include_tasks: create_boot_order_policies.yml
+
+# Create BIOS Policy
+- include_tasks: create_bios_policies.yml
+
+
+
+
+# Create IPMI over LAN Policy to enable IPMI over LAN
+- include_tasks: create_ipmi_policy.yml
+
+# Create SerialOver LAN Policy
+- include_tasks: create_sol_policy.yml
+
+
+# Create Storage Policy
+- include_tasks: create_storage_policy.yml
 
 # Create Adapter Policy (VIC1457 or VIC 1467)
-- include_tasks: create_boot_order_policies.yml
+- include_tasks: create_adapter_policy.yml
