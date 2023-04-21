@@ -1,4 +1,4 @@
-# Cohesity Server Profile Template Deployment with Cisco C240 M5/M6 LFF Intel based Servers supporting both Cisco VIC 4th Gen  VIC
+# Cohesity Server Profile Template Deployment with Cisco C240 M5/M6 LFF Intel based Servers supporting Cisco VIC 4th Gen  VIC
 
 This repository  contains Ansible playbooks to configure the Cohesity Server Profiles on Cisco C240 M5/M6 LFF Intel based Servers which includes : <br />
 &emsp;&emsp; •	 Cisco UCS C240 M5/M6 standalone servers  managed throuhgh Intersight  <br />
