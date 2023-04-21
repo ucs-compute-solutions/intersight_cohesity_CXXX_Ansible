@@ -13,9 +13,7 @@ Manual deployment of Server Profile Template is detailed under https://www.cisco
 
 ## Cohesity on C240 M5/M6 (standalone , managed through Intersight) - Physical Topologies
 
-IP connectivity             |  FC connectivity
-:-------------------------:|:-------------------------:
-![](https://user-images.githubusercontent.com/25094641/190374265-daef542b-cdc6-40f6-9c7a-6cf76f99bbe2.jpg)  |  ![](https://user-images.githubusercontent.com/25094641/190374304-b505b0e6-1011-4312-aca8-3d729d7fa1c4.jpg)
+![Cohesity Standalone Cxxx](https://user-images.githubusercontent.com/101294457/233705557-38c439be-32b1-4fe8-8cd4-67dfc2e100d8.png)
 
 <br />
 
