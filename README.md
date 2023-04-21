@@ -26,7 +26,7 @@ Manual deployment of Server Profile Template is detailed under https://www.cisco
 <br />
 
 
-###  Cohesity on X-Series Automated Deployment Workflow
+###  Cohesity on Cisco UCS C240 M5/M6 Rack Server Automated Deployment Workflow
 ![Cohesity Cxx ansibleautomation](https://user-images.githubusercontent.com/101294457/233709900-90df3ab0-6d7c-4f29-a632-6375a2a1246e.png)
 
 <br />
