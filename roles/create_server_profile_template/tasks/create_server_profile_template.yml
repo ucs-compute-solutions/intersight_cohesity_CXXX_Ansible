@@ -1,6 +1,6 @@
 ---
 # Create Server Profile Template for Cohesity with X-Series
-- name: "Configure Server Profile Template for Cohesity X-Series - X210C"
+- name: "Configure Server Profile Template for Cohesity with C220/C240 M5/M6 standalone server (without UCS Fabric Interconnect)"
   vars:
         api_info: &api_info_assign
           api_private_key: "{{ api_private_key }}"
@@ -44,7 +44,7 @@
                   "Moid": "{{ adapter_policy_details.api_response.Moid }}",
                   "ObjectType": "adapter.ConfigPolicy"
                 },
-                
+
               ],
               "TargetPlatform": "Standalone",
               "Organization": {
