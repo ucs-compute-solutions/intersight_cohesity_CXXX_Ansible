@@ -18,7 +18,7 @@
         "Description": "{{ description_of_storage_policy }}",
         "UseJbodForVdCreation": false,
         "UnusedDisksState": "NoChange",
-        "DefaultDriveMode": "Jbod",
+        "DefaultDriveMode": "UnconfiguredGood",
         "M2VirtualDrive": {
            "Enable": false,
           },

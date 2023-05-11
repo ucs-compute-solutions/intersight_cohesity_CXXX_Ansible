@@ -9,7 +9,7 @@ description_of_bios_policy : "BIOS Policy for Performance Optimized {{ server_cp
 boot_order_policy_description    : "Boot Order Policy - M.2 MSTOR-RAID"
 
 # Storage Policy  (if required)
-description_of_storage_policy    : "Storage Policy - JBOD"
+description_of_storage_policy    : "Storage Policy - Default"
 
 # C-Series standalone Adapter Policy
 # FecMode cl91, cl74 or Off
